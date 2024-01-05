@@ -1,4 +1,11 @@
+# Todo List
+
+This is a simple todo list project, using React + Typescript. 
+
+![todo-list](https://github.com/kayokalinauskas/todo-list/assets/55154073/7adf74ad-07e1-4dbf-a355-d73bebc9d3e8)
+
 # React + TypeScript + Vite
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
