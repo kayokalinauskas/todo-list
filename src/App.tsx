@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 import { Button } from "./components/Button";
 import styles from "./App.module.css";
 import { Input } from "./components/Input";
@@ -61,13 +61,35 @@ function App() {
     setTasks((state) => [...state, newTask]);
     setInputValue("");
   }
+
+  function handleKeyboardInput(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter") {
+      if (!inputValue) {
+        return;
+      }
+      const newTask: ITask = {
+        id: new Date().getTime(),
+        text: inputValue,
+        isChecked: false,
+      };
+      setTasks((state) => [...state, newTask]);
+      setInputValue("");
+    }
+    return;
+  }
+
   return (
     <main>
       <Header />
 
       <section className={styles.content}>
         <div className={styles.taskInputContainer}>
-          <Input type="text" onChange={(e) => setInputValue(e.target.value)} value={inputValue}></Input>
+          <Input
+            type="text"
+            onChange={(e) => setInputValue(e.target.value)}
+            value={inputValue}
+            onKeyDown={handleKeyboardInput}
+          ></Input>
           <Button onClick={handleCreateNewTask}>
             Criar <PlusCircle size={16} color="#f2f2f2" weight="bold" />
           </Button>
