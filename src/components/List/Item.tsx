@@ -20,7 +20,6 @@ export function Item({ data, removeTask, toggleTaskStatus }: Props) {
   const checkboxCheckedClassname = data.isChecked ? styles["checkbox-checked"] : styles["checkbox-unchecked"];
   const paragraphCheckedClassname = data.isChecked ? styles["paragraph-checked"] : "";
 
-  console.log(data);
   return (
     <div className={styles.container}>
       <div>

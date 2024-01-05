@@ -1,4 +1,4 @@
-import { useState, KeyboardEvent } from "react";
+import { useState } from "react";
 import { Button } from "./components/Button";
 import styles from "./App.module.css";
 import { Input } from "./components/Input";
